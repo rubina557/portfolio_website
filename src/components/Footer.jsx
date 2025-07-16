@@ -1,107 +1,43 @@
+// src/components/Footer.jsx
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo/Brand */}
-          <div className="space-y-4">
-            <div className="text-lg font-semibold text-gray-900 dark:text-white">
-              [e]
-            </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 max-w-xs">
-              Building digital experiences with passion and precision.
-            </p>
-          </div>
-
-          {/* Links */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-              Navigation
-            </h3>
-            <div className="space-y-2">
-              <Link
-                href="/about"
-                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                href="/work"
-                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                Work
-              </Link>
-              <Link
-                href="/notebook"
-                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                Notebook
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-
-          {/* Social */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-              Connect
-            </h3>
-            <div className="space-y-2">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                Twitter
-              </a>
-            </div>
-          </div>
+    <footer className="relative mt-20">
+      <div className="absolute inset-0 h-80 w-full bg-gradient-to-r from-yellow-100 via-pink-100 to-blue-100 dark:from-yellow-900 dark:via-pink-900 dark:to-blue-900 blur-2xl -z-10" />
+      <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-start gap-12 text-sm">
+        {/* Left side */}
+        <div className="space-y-3">
+          <h1 className="text-2xl font-bold">[e]</h1>
+          <p>Thanks for stopping by!</p>
+          <p className="text-xs mt-8 text-gray-600 dark:text-gray-400">
+            © 2025 Ehtesham. All Rights Reserved.
+          </p>
         </div>
 
-        {/* Bottom section */}
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-gray-500 dark:text-gray-500">
-              © {new Date().getFullYear()} All rights reserved.
-            </p>
-            <div className="flex gap-6 text-xs text-gray-500 dark:text-gray-500">
-              <Link
-                href="/privacy"
-                className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
+        {/* Center (optional spacing) */}
+        <div className="flex-1 hidden md:block" />
+
+        {/* Right side */}
+        <div className="grid grid-cols-2 gap-12">
+          <div>
+            <h3 className="font-semibold mb-2">Links</h3>
+            <ul className="space-y-1 text-gray-700 dark:text-gray-300">
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/work">Work</Link></li>
+              <li><Link to="/tech">Tech Stack</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Elsewhere</h3>
+            <ul className="space-y-1 text-gray-700 dark:text-gray-300">
+              <li><a href="mailto:e@example.com">Email</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a></li>
+              <li><a href="https://discord.com" target="_blank" rel="noreferrer">Discord</a></li>
+            </ul>
           </div>
         </div>
       </div>
