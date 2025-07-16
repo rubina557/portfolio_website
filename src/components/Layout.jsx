@@ -1,31 +1,40 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Header from "./Header";
 import { useEffect, useState } from "react";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    // Check for saved theme preference or default to 'light'
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
   }, []);
 
   useEffect(() => {
-    // Update document class and save preference
     document.documentElement.classList.toggle("dark", theme === "dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
-      <Navbar theme={theme} setTheme={setTheme} />
+    <div className="relative min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors overflow-hidden">
 
-      <main className="flex-grow">
-        <div className="max-w-6xl mx-auto px-6 py-12">{children}</div>
-      </main>
+      {/* TOP Gradient */}
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[300px] h-24 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-50 blur-2xl z-0" />
 
-      <Footer />
+      {/* BOTTOM Gradient */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] h-24 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-50 blur-2xl z-0" />
+
+      {/* Content Layer */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar theme={theme} setTheme={setTheme} />
+        <main className="flex-grow">
+          <div className="max-w-6xl mx-auto px-6 py-12">
+            <Header />
+          </div>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
