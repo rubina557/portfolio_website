@@ -1,6 +1,4 @@
-"use client"
-
-import Link from "next/link"
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,7 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo/Brand */}
           <div className="space-y-4">
-            <div className="text-lg font-semibold text-gray-900 dark:text-white">[e]</div>
+            <div className="text-lg font-semibold text-gray-900 dark:text-white">
+              [e]
+            </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 max-w-xs">
               Building digital experiences with passion and precision.
             </p>
@@ -17,7 +17,9 @@ const Footer = () => {
 
           {/* Links */}
           <div className="space-y-4">
-            <h3 className="text-sm font-medium text-gray-900 dark:text-white">Navigation</h3>
+            <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+              Navigation
+            </h3>
             <div className="space-y-2">
               <Link
                 href="/about"
@@ -48,7 +50,9 @@ const Footer = () => {
 
           {/* Social */}
           <div className="space-y-4">
-            <h3 className="text-sm font-medium text-gray-900 dark:text-white">Connect</h3>
+            <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+              Connect
+            </h3>
             <div className="space-y-2">
               <a
                 href="https://github.com"
@@ -85,10 +89,16 @@ const Footer = () => {
               © {new Date().getFullYear()} All rights reserved.
             </p>
             <div className="flex gap-6 text-xs text-gray-500 dark:text-gray-500">
-              <Link href="/privacy" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+              <Link
+                href="/privacy"
+                className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+              <Link
+                href="/terms"
+                className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
                 Terms of Service
               </Link>
             </div>
@@ -96,7 +106,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

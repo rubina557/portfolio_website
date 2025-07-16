@@ -1,23 +1,21 @@
-"use client"
-
-import Navbar from "./navbar"
-import Footer from "./footer"
-import { useEffect, useState } from "react"
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { useEffect, useState } from "react";
 
 const Layout = ({ children }) => {
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     // Check for saved theme preference or default to 'light'
-    const savedTheme = localStorage.getItem("theme") || "light"
-    setTheme(savedTheme)
-  }, [])
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+  }, []);
 
   useEffect(() => {
     // Update document class and save preference
-    document.documentElement.classList.toggle("dark", theme === "dark")
-    localStorage.setItem("theme", theme)
-  }, [theme])
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
@@ -29,7 +27,7 @@ const Layout = ({ children }) => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

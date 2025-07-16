@@ -1,32 +1,34 @@
-"use client"
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Sun, Moon, Menu, X, Github, Linkedin, Twitter } from "lucide-react"
-import { useState } from "react"
+import { Link, useLocation } from 'react-router-dom';
+import { Sun, Moon, Menu, X, Github, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
 
 const Navbar = ({ theme, setTheme }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+
+  const { pathname } = useLocation();
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-lg font-semibold text-gray-900 dark:text-white">
+        {/* CHANGED: `href` is now `to` */}
+        <Link to="/" className="text-lg font-semibold text-gray-900 dark:text-white">
           [e]
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-sm">
           {["about", "work", "notebook", "contact"].map((route) => {
-            const href = `/${route}`
-            const isActive = pathname === href
+            const toPath = `/${route}`; // It's good practice to not name variables the same as props (`href`)
+            const isActive = pathname === toPath;
 
             return (
               <Link
                 key={route}
-                href={href}
+                // CHANGED: `href` is now `to`
+                to={toPath}
                 className={`capitalize transition-colors ${
                   isActive
                     ? "font-medium text-gray-900 dark:text-white"
@@ -35,7 +37,7 @@ const Navbar = ({ theme, setTheme }) => {
               >
                 {route}
               </Link>
-            )
+            );
           })}
         </nav>
 
@@ -95,13 +97,14 @@ const Navbar = ({ theme, setTheme }) => {
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
           <nav className="px-6 py-4 space-y-3">
             {["about", "work", "notebook", "contact"].map((route) => {
-              const href = `/${route}`
-              const isActive = pathname === href
+              const toPath = `/${route}`;
+              const isActive = pathname === toPath;
 
               return (
                 <Link
                   key={route}
-                  href={href}
+                  // CHANGED: `href` is now `to`
+                  to={toPath}
                   className={`block capitalize text-sm transition-colors ${
                     isActive
                       ? "font-medium text-gray-900 dark:text-white"
@@ -111,46 +114,23 @@ const Navbar = ({ theme, setTheme }) => {
                 >
                   {route}
                 </Link>
-              )
+              );
             })}
 
             {/* Social icons in mobile menu */}
             <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
               <div className="flex gap-4">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://x.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
+                {/* Regular <a> tags for external links are perfectly fine */}
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="...">...</a>
+                <a href="https://x.com" target="_blank" rel="noreferrer" className="...">...</a>
+                <a href="https://github.com" target="_blank" rel="noreferrer" className="...">...</a>
               </div>
             </div>
           </nav>
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
