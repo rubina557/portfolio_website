@@ -1,61 +1,29 @@
-// src/pages/More/Bookshelf.jsx
-
-import React from 'react';
-import BookCard from '../../components/BookCard'; // Correct relative path from More/ to components/
-
-// Mock data for the books. You would likely fetch this from a CMS or a local data file.
-const bookData = [
-  {
-    id: 1,
-    imgSrc: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1585611142l/44767458.jpg', // Replace with your actual image paths in src/assets/
-    title: 'Atomic Habits',
-    author: 'James Clear',
-    description: 'An easy & proven way to build good habits & break bad ones. A framework for improving every day.',
-  },
-  {
-    id: 2,
-    imgSrc: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657647242l/23692271.jpg',
-    title: 'The Design of Everyday Things',
-    author: 'Don Norman',
-    description: 'A foundational book on user-centered design, explaining why some products satisfy customers while others only frustrate them.',
-  },
-  {
-    id: 3,
-    imgSrc: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348927954l/3735293.jpg',
-    title: 'Sapiens: A Brief History of Humankind',
-    author: 'Yuval Noah Harari',
-    description: 'A groundbreaking narrative of humanity’s creation and evolution that explores the ways in which biology and history have defined us.',
-  },
-  {
-    id: 4,
-    imgSrc: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546092529l/40121378.jpg',
-    title: 'Thinking, Fast and Slow',
-    author: 'Daniel Kahneman',
-    description: 'A fascinating dive into the two systems that drive the way we think, revealing our cognitive biases.',
-  },
-];
+import BookCard from '../../components/BookCard'; 
+import { booksData } from '../../data/booksData'; 
 
 const Bookshelf = () => {
   return (
-    <div className="container mx-auto max-w-7xl px-4 py-20 md:py-24">
+    <div className="max-w-7xl mx-auto px-4 py-16">
       {/* Page Header */}
-      <div className="text-center mb-16">
-        <p className="text-geist-blue font-semibold">Reading List</p>
-        <h1 className="text-4xl md:text-5xl font-bold mt-2">My Bookshelf</h1>
-        <p className="text-lg text-geist-gray mt-4 max-w-3xl mx-auto">
-          A collection of books that have shaped my thinking, sharpened my skills, and offered new perspectives on design, technology, and life.
+      <div className="relative text-center mb-16">
+         {/* Decorative Gradient */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-24 bg-blue-500/20 dark:bg-blue-500/30 blur-3xl rounded-full -z-10"></div>
+        <h1 className="text-5xl font-bold text-gray-900 dark:text-white">
+          Bookshelf
+        </h1>
+        <p className="text-lg text-gray-500 dark:text-gray-400 mt-2">
+          Books and pieces of wisdom I've enjoyed reading.
         </p>
       </div>
 
-      {/* Books Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {bookData.map((book) => (
+      {/* Responsive Book Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-6 gap-y-10">
+        {booksData.map((book) => (
           <BookCard
             key={book.id}
-            imgSrc={book.imgSrc}
             title={book.title}
-            author={book.author}
-            description={book.description}
+            imageSrc={book.imageSrc}
+            link={book.link}
           />
         ))}
       </div>
