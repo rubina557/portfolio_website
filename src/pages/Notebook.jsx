@@ -1,7 +1,11 @@
 // src/pages/Notebook.jsx
 
 import React from 'react';
+import { Link } from 'react-router-dom'; // <-- FIX #2: Import the Link component
 
+// <-- FIX #1: Import the arrowRight icon. 
+// (Adjust the path if your assets folder is located elsewhere)
+import arrowRight from '../assets/icons/arrow-right.svg'; 
 
 // Mock data for notebook/blog entries
 const articles = [
@@ -28,6 +32,8 @@ const articles = [
   },
 ];
 
+// NOTE: You are using 'geist-blue' and 'geist-gray'. 
+// Make sure these colors are defined in your tailwind.config.js file.
 const Notebook = () => {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-20 md:py-24">
@@ -46,14 +52,16 @@ const Notebook = () => {
           <article key={article.id} className="group">
             <p className="text-sm text-geist-gray mb-2">{article.date}</p>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              <a href={article.slug} className="hover:text-geist-blue transition-colors duration-300">
+              {/* <-- FIX #2: Use <Link> instead of <a> */}
+              <Link to={article.slug} className="hover:text-geist-blue transition-colors duration-300">
                 {article.title}
-              </a>
+              </Link>
             </h2>
             <p className="text-geist-gray mb-4">{article.excerpt}</p>
-            <a href={article.slug} className="inline-flex items-center font-semibold text-white group-hover:text-geist-blue transition-colors duration-300">
+            {/* <-- FIX #2: Use <Link> instead of <a> */}
+            <Link to={article.slug} className="inline-flex items-center font-semibold text-white group-hover:text-geist-blue transition-colors duration-300">
               Read Article <img src={arrowRight} alt="arrow" className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </article>
         ))}
       </div>
