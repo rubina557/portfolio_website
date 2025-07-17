@@ -3,40 +3,54 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-20">
-      <div className="absolute inset-0 h-80 w-full bg-gradient-to-r from-yellow-100 via-pink-100 to-blue-100 dark:from-yellow-900 dark:via-pink-900 dark:to-blue-900 blur-2xl -z-10" />
-      <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-start gap-12 text-sm">
-        {/* Left side */}
-        <div className="space-y-3">
-          <h1 className="text-2xl font-bold">[e]</h1>
-          <p>Thanks for stopping by!</p>
-          <p className="text-xs mt-8 text-gray-600 dark:text-gray-400">
-            © 2025 Ehtesham. All Rights Reserved.
+    // 1. Set the main footer to relative and overflow-hidden to contain the gradient.
+    //    Increased top margin to give it space from the page content.
+    <footer className="relative mt-32 overflow-hidden">
+      {/* 2. The decorative gradient background.
+          - It's absolute to the parent footer.
+          - Colors are more vibrant to match the design.
+          - Increased blur for a softer effect.
+          - Opacity is adjusted for light and dark modes. */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-200 via-rose-200 to-violet-300 dark:from-orange-900/50 dark:via-rose-900/50 dark:to-violet-900/50 blur-3xl -z-10" />
+
+      {/* 3. Main content container.
+          - Increased vertical padding (py-24) to match the tall, airy feel.
+          - Items are aligned to the top on all screen sizes (`items-start`). */}
+      <div className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row justify-between items-start gap-12 text-sm">
+        
+        {/* Left side: Logo & Copyright */}
+        {/* 4. This column is set to flex and justify-between to push the copyright to the bottom. */}
+        <div className="flex flex-col justify-between h-full min-h-[10rem]">
+          <div>
+            <h1 className="text-5xl font-bold text-gray-900 dark:text-white">[e]</h1>
+            <p className="mt-3 text-gray-600 dark:text-gray-400">Thanks for stopping by ツ</p>
+          </div>
+          <p className="text-xs text-gray-500 dark:text-gray-500">
+            © {new Date().getFullYear()} Eihab Khan. All Rights Reserved.
           </p>
         </div>
 
-        {/* Center (optional spacing) */}
-        <div className="flex-1 hidden md:block" />
-
-        {/* Right side */}
-        <div className="grid grid-cols-2 gap-12">
+        {/* Right side: Links Grid */}
+        {/* 5. Increased the gap between the two link columns for better spacing. */}
+        <div className="grid grid-cols-2 gap-16">
           <div>
-            <h3 className="font-semibold mb-2">Links</h3>
-            <ul className="space-y-1 text-gray-700 dark:text-gray-300">
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/work">Work</Link></li>
-              <li><Link to="/tech">Tech Stack</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+            <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Links</h3>
+            <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+              <li><Link to="/about" className="hover:text-gray-900 dark:hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/work" className="hover:text-gray-900 dark:hover:text-white transition-colors">Work</Link></li>
+              {/* Corrected path based on previous setup */}
+              <li><Link to="/more/tech-stack" className="hover:text-gray-900 dark:hover:text-white transition-colors">Tech Stack</Link></li>
+              <li><Link to="/contact" className="hover:text-gray-900 dark:hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-2">Elsewhere</h3>
-            <ul className="space-y-1 text-gray-700 dark:text-gray-300">
-              <li><a href="mailto:e@example.com">Email</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></li>
-              <li><a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a></li>
-              <li><a href="https://discord.com" target="_blank" rel="noreferrer">Discord</a></li>
+            <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Elsewhere</h3>
+            <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+              <li><a href="mailto:e@example.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">Email</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">Twitter</a></li>
+              <li><a href="https://discord.com" target="_blank" rel="noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">Discord</a></li>
             </ul>
           </div>
         </div>
