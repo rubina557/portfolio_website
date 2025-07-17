@@ -6,9 +6,10 @@ const Header = () => {
     <header className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row justify-between items-center gap-8">
       {/* Left Section */}
       <div className="flex-1">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-          I'm Eihab Khan
-        </h1>
+      <h1 className="text-4xl font-bold">
+  <span className="text-gray-500 dark:text-gray-400">I'm</span>{' '}
+  <span className="text-black dark:text-white">Eihab Khan</span>
+</h1>
         <p className="text-gray-600 dark:text-gray-300 max-w-md mb-6">
           A frontend developer crafting clean interfaces and exploring the web with React, Tailwind, and thoughtful design.
         </p>
