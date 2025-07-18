@@ -100,7 +100,7 @@ export default function PortfolioPage() {
             </p>
             <Link
               to="#"
-              className="inline-flex items-center gap-2 text-[#111827] dark:text-white font-medium hover:underline transition-colors lg:mt-40"
+              className="inline-flex items-center gap-2 text-[#111827] dark:text-white font-medium hover:underline transition-colors lg:mt-4"
             >
               Visit Site <ArrowRight className="h-4 w-4" />
             </Link>
