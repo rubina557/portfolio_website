@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import lightPortraitImage from "../assets/images/Circle-Portrait.png";
-import darkPortraitImage from "../assets/images/dark-Circle-Portrait.png";
+import lightPortraitImage from "@/assets/images/Circle-Portrait.png";
+import darkPortraitImage from "@/assets/images/dark-Circle-Portrait.png";
 
 const Hero = () => {
   return (

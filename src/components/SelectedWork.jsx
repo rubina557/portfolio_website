@@ -1,12 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import subbiIcon from "../assets/images/Subbi.png";
-import iphoneImage from "../assets/images/iPhone-14.png";
-import reactDocsIcon from "../assets/images/React-Docs.png";
-import ipadImage from "../assets/images/iPad-and-Apple-Pencil.png";
-import storybookDocsIcon from "../assets/images/Storybook-Docs.png";
-import browserImage from "../assets/images/browser.png";
+import subbiIcon from "@/assets/images/Subbi.png";
+import iphoneImage from "@/assets/images/iPhone-14.png";
+import reactDocsIcon from "@/assets/images/React-Docs.png";
+import ipadImage from "@/assets/images/iPad-and-Apple-Pencil.png";
+import storybookDocsIcon from "@/assets/images/Storybook-Docs.png";
+import browserImage from "@/assets/images/browser.png";
 
 
 const projectData = [
