@@ -1,4 +1,5 @@
 import { Send } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const cardData = [
   {
@@ -59,29 +60,42 @@ const GetToKnowMe = () => {
                 </p>
               </div>
               {card.imageSrc && (
-                <div className={`flex ${card.imageContainerClassName || 'justify-center'}`}>
+                <div
+                  className={`flex ${
+                    card.imageContainerClassName || "justify-center"
+                  }`}
+                >
                   <img
                     src={card.imageSrc || "/placeholder.svg"}
                     alt={card.imageAlt}
-                    className={`w-auto object-contain ${card.imageClassName || ""}`}
+                    className={`w-auto object-contain ${
+                      card.imageClassName || ""
+                    }`}
                   />
                 </div>
               )}
             </div>
           ))}
         </div>
-        
+
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between bg-gray-50 dark:bg-[#0D0D0D] rounded-xl p-8 md:p-12 w-full">
-            <div className="text-center md:text-left mb-6 md:mb-0">
-                <h2 className="font-bold text-[28px] md:text-[32px] leading-[100%] tracking-[0] mb-2">Let’s work together</h2>
-                <p className="font-normal text-[16px] text-[#808080] dark:text-[#808080]/80 max-w-full sm:max-w-md mx-auto md:mx-0 ">
-                    Want to discuss an opportunity to create something great? I'm ready when you are.
-                </p>
-            </div>
-            <button className="bg-black dark:bg-white text-white dark:text-black px-7 py-[14px] rounded-[8px] text-[16px] font-medium hover:opacity-90 transition-all duration-200 hover:-translate-y-[1px] flex items-center gap-2 whitespace-nowrap">
-                Get in touch
-                <Send className="-rotate-45 h-[20px] w-[20px]" />
-            </button>
+          <div className="text-center md:text-left mb-6 md:mb-0">
+            <h2 className="font-bold text-[28px] md:text-[32px] leading-[100%] tracking-[0] mb-2">
+              Let’s work together
+            </h2>
+            <p className="font-normal text-[16px] text-[#808080] dark:text-[#808080]/80 max-w-full sm:max-w-md mx-auto md:mx-0 ">
+              Want to discuss an opportunity to create something great? I'm
+              ready when you are.
+            </p>
+          </div>
+
+          <Link
+            to="/contact"
+            className="bg-black dark:bg-white text-white dark:text-black px-7 py-[14px] rounded-[8px] text-[16px] font-medium hover:opacity-90 transition-all duration-200 hover:-translate-y-[1px] flex items-center gap-2 whitespace-nowrap"
+          >
+            Get in touch
+            <Send className="-rotate-45 h-[20px] w-[20px]" />
+          </Link>
         </div>
       </div>
     </div>

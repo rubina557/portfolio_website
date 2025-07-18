@@ -6,7 +6,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Work from "./pages/Work.jsx";
 import Notebook from "./pages/Notebook.jsx";
-import NoteDetail from './pages/NoteDetail'; 
+import NoteDetail from "./pages/NoteDetail";
 import Contact from "./pages/Contact.jsx";
 import Bookshelf from "./pages/More/Bookshelf.jsx";
 import TechStack from "./pages/More/TechStack.jsx";

@@ -1,14 +1,11 @@
-// src/components/Layout.jsx
-
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom"; 
+import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Layout = () => {
   const [theme, setTheme] = useState("light");
 
-  // Keep all your theme logic as it is, it's perfect.
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
@@ -21,19 +18,14 @@ const Layout = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors overflow-x-hidden">
-
-      {/* TOP Gradient (keep this) */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[300px] h-24 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-50 blur-2xl z-0" />
 
-      {/* BOTTOM Gradient (keep this) */}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] h-24 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-50 blur-2xl z-0" />
 
-      {/* Content Layer */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar theme={theme} setTheme={setTheme} />
         <main className="flex-grow">
           <div className="max-w-6xl mx-auto px-6 py-12">
-            {/* 2. Replace the static Header with the dynamic Outlet */}
             <Outlet />
           </div>
         </main>

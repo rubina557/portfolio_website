@@ -1,13 +1,13 @@
-import devImage from '../assets/images/dev.jpg';
-import designImage from '../assets/images/design.png';
+import devImage from "../assets/images/dev.jpg";
+import designImage from "../assets/images/design.png";
 
 export const notesData = [
   {
-    slug: 'ultimate-guide-nextjs-app-router',
-    category: 'Dev',
-    title: 'Ultimate guide to the App Router in Next.js 13',
-    date: '17th Jul 2023',
-    readTime: '7 min read',
+    slug: "ultimate-guide-nextjs-app-router",
+    category: "Dev",
+    title: "Ultimate guide to the App Router in Next.js 13",
+    date: "17th Jul 2023",
+    readTime: "7 min read",
     image: devImage,
     content: `
       <p>The App Router in Next.js is responsible for handling client-side routing within your application. It provides developers with a clear and intuitive way to define routes, handle navigation, and manage dynamic URLs. Here are some key features of the Next.js App Router:</p>
@@ -24,13 +24,13 @@ export const notesData = [
     `,
   },
   {
-    slug: 'design-systems-for-scale',
-    category: 'Design',
-    title: 'Designing Systems for Large-Scale Applications',
-    date: '28th Aug 2023',
-    readTime: '12 min read',
-   image: designImage,
-       content: `
+    slug: "design-systems-for-scale",
+    category: "Design",
+    title: "Designing Systems for Large-Scale Applications",
+    date: "28th Aug 2023",
+    readTime: "12 min read",
+    image: designImage,
+    content: `
       <p>The App Router in Next.js is responsible for handling client-side routing within your application. It provides developers with a clear and intuitive way to define routes, handle navigation, and manage dynamic URLs. Here are some key features of the Next.js App Router:</p>
       <br/>
       <ol>
@@ -44,5 +44,4 @@ export const notesData = [
       <p>These are some of the fundamental features and concepts of the App Router in Next.js. However, it's important to note that newer versions of Next.js may introduce additional enhancements or changes to the App Router.</p>
     `,
   },
-  // Add more articles here
 ];

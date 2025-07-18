@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 md:px-8  dark:bg-black">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 md:px-8 dark:bg-black">
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-[1200px] mx-auto gap-8 md:gap-16">
         <div className="flex-1 max-w-[600px] text-center md:text-left">
           <h1 className="font-inter font-normal text-[40px] leading-[100%] tracking-[0] mb-4 sm:text-[48px] md:text-[64px] lg:text-[88px]">
@@ -21,9 +21,13 @@ const Hero = () => {
             <button className="bg-[#111827] dark:bg-[#0D0D0D] text-white px-7 py-[14px] rounded-[8px] text-[16px] font-medium hover:bg-[#1f2937] dark:hover:bg-[#1a1a1a] transition-all duration-200 hover:-translate-y-[1px]">
               See my resume
             </button>
-            <button className="bg-transparent text-[#374151] dark:text-[#808080] border-[1.5px] border-[#d1d5db] dark:border-[#323232] px-7 py-[14px] rounded-[8px] text-[16px] font-medium hover:bg-[#f9fafb] dark:hover:bg-[#0D0D0D] hover:border-[#9ca3af] dark:hover:border-[#404040] transition-all duration-200 hover:-translate-y-[1px]">
+
+            <Link
+              to="/contact"
+              className="bg-transparent text-[#374151] dark:text-[#808080] border-[1.5px] border-[#d1d5db] dark:border-[#323232] px-7 py-[14px] rounded-[8px] text-[16px] font-medium hover:bg-[#f9fafb] dark:hover:bg-[#0D0D0D] hover:border-[#9ca3af] dark:hover:border-[#404040] transition-all duration-200 hover:-translate-y-[1px]"
+            >
               Get in touch
-            </button>
+            </Link>
           </div>
         </div>
         <div className="flex-1 flex justify-center items-center relative">
