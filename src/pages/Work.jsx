@@ -1,48 +1,61 @@
-import { ArrowRight, Send, Sparkles } from "lucide-react"
-import { Link } from "react-router-dom"
+import { ArrowRight, Send, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
+// === FIX: STEP 1 - IMPORT ALL YOUR IMAGES ===
+// Import all images using the configured '@/' alias.
+// NOTE: I have used the corrected filenames without spaces.
+import subbiIcon from "@/assets/images/Subbi.png";
+import iphoneImage from "@/assets/images/iPhone-14.png";
+import reactDocsIcon from "@/assets/images/React-Docs.png";
+import ipadImage from "@/assets/images/iPad-and-Apple-Pencil.png";
+import storybookDocsIcon from "@/assets/images/Storybook-Docs.png";
+import browserImage from "@/assets/images/browser.png";
+import parrotxtIcon from "@/assets/images/Parrotxt.png";
+
+
+// === FIX: STEP 2 - USE THE IMPORTED VARIABLES IN YOUR DATA ARRAY ===
 const projectData = [
   {
     id: "subbi",
-    iconSrc: "/src/assets/images/Subbi.png",
+    iconSrc: subbiIcon, // <-- CORRECT
     title: "Subbi — The free subscriptions manager",
     description:
       "Subbi is a side project that I've built to help me keep track of how much I spend on subscriptions and also to prevent the 'accidental' bill after a 14-day trail ends. It helps you keep track of bills like Netflix, Spotify, Xbox Game Pass, Bus Card, Bank Cards, and many more.",
     linkText: "Download App",
     linkHref: "#",
-    imageSrc: "/src/assets/images/iPhone 14.png",
+    imageSrc: iphoneImage, // <-- CORRECT
     imageAlt: "Subbi App Screenshot",
     isTilted: true,
   },
   {
     id: "react-docs",
-    iconSrc: "/src/assets/images/React Docs.png",
+    iconSrc: reactDocsIcon, // <-- CORRECT
     title: "React Documentation",
     description:
       "With the release of the new React website on March 16, there was a need for localization to make the documentation accessible to Arabic-speaking developers. I contributed to translating several documentation, worked with great developers, improved my ability to write better PR requests, and as a side effect, I now know more about the Arabic grammar.",
     linkText: "Visit Site",
     linkHref: "#",
-    imageSrc: "/src/assets/images/iPad & Apple Pencil.png",
+    imageSrc: ipadImage, // <-- CORRECT
     imageAlt: "React Docs Screenshot",
     isTilted: true,
   },
   {
     id: "storybook-docs",
-    iconSrc: "/src/assets/images/Storybook Docs.png",
+    iconSrc: storybookDocsIcon, // <-- CORRECT
     title: "Storybook Documentation",
     description:
       "This was my very first OSS contribution, I contributed to translating the documentation of Storybook into Arabic, enabling a wider audience to access and understand the resources available. I gained valuable experience in working effectively with teams and navigating the pull request process.",
     linkText: "Visit Site",
     linkHref: "#",
-    imageSrc: "/src/assets/images/browser.png",
+    imageSrc: browserImage, // <-- CORRECT
     imageAlt: "Storybook Docs Screenshot",
     isTilted: false,
   },
-]
+];
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen   text-gray-900 dark:text-white py-16">
+    <div className="min-h-screen text-gray-900 dark:text-white py-16">
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16">
         <h2 className="font-bold text-[42px] md:text-[48px] leading-[100%] tracking-[0] mb-12 text-center md:text-left">
           {"Projects"}
@@ -87,8 +100,9 @@ export default function PortfolioPage() {
       <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-16 py-12 lg:ml-10">
         <div className="bg-gray-50 dark:bg-[#0D0D0D] rounded-xl p-6 md:p-8 flex flex-col lg:flex-row items-center lg:items-start gap-8 border border-gray-200 dark:border-[#323232] shadow-sm w-full lg:w-[900px] lg:h-[470px]">
           <div className="flex-1 text-center lg:text-left">
+            {/* === FIX: USE IMPORTED VARIABLE HERE AS WELL === */}
             <img
-              src="/src/assets/images/Parrotxt.png"
+              src={parrotxtIcon} // <-- CORRECT
               alt="Parrotxt icon"
               className="mb-4 w-16 h-16 object-contain block mx-auto lg:mx-0"
             />
@@ -131,7 +145,6 @@ export default function PortfolioPage() {
           <p className="font-normal text-[16px] text-[#808080] dark:text-[#808080]/80 mb-8">
             Let's turn your idea into a visual reality
           </p>
-          {/* --- The changed part is here --- */}
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full hover:opacity-90 transition-opacity"
