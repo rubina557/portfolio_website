@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 
+import lightPortraitImage from "../assets/images/Circle-Portrait.png";
+import darkPortraitImage from "../assets/images/dark-Circle-Portrait.png";
+
 const Hero = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 md:px-8 dark:bg-black">
@@ -33,12 +36,12 @@ const Hero = () => {
         <div className="flex-1 flex justify-center items-center relative">
           <div className="w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] bg-[#e5e7eb] dark:bg-[#1a1a1a] rounded-full flex items-center justify-center overflow-hidden">
             <img
-              src="/src/assets/images/Circle Portrait.png"
+              src={lightPortraitImage}
               alt="Portrait in light mode"
               className="dark:hidden w-full h-full object-cover"
             />
             <img
-              src="/src/assets/images/dard-Circle Portrait.png"
+              src={darkPortraitImage}
               alt="Portrait in dark mode"
               className="hidden dark:block w-full h-full object-cover"
             />

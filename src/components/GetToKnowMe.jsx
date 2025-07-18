@@ -1,12 +1,19 @@
 import { Send } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
+
+import avatarImage from "@/assets/images/avatar.png";
+import notebookImage from "@/assets/images/Notebook.png";
+import bookshelfImage from "@/assets/images/Bookshelf.png";
+import techStackImage from "@/assets/images/Tech-Stack.png";
+
 const cardData = [
   {
     id: "about",
     title: "About me",
     description: "Who I am and what I do",
-    imageSrc: "/src/assets/images/avater.png",
+    imageSrc: avatarImage, 
     imageAlt: "Eihab's avatar",
     imageContainerClassName: "justify-start",
     imageClassName: "max-h-[160px]",
@@ -15,7 +22,7 @@ const cardData = [
     id: "notebook",
     title: "Notebook",
     description: "My thoughts, insights, and reflections",
-    imageSrc: "/src/assets/images/Notebook.png",
+    imageSrc: notebookImage,
     imageAlt: "Notebook",
     imageContainerClassName: "justify-end",
     imageClassName: "max-h-[180px]",
@@ -24,7 +31,7 @@ const cardData = [
     id: "bookshelf",
     title: "Bookshelf",
     description: "Books and pieces of wisdom I've enjoyed reading",
-    imageSrc: "/src/assets/images/Bookshelf.png",
+    imageSrc: bookshelfImage,
     imageAlt: "Books",
     imageContainerClassName: "justify-center",
     imageClassName: "max-h-[150px] w-full",
@@ -33,7 +40,7 @@ const cardData = [
     id: "tech-stack",
     title: "Tech Stack",
     description: "The dev tools, apps, devices, and games I use and play.",
-    imageSrc: "/src/assets/images/Tech Stack.png",
+    imageSrc: techStackImage,
     imageAlt: "Tech Stack Logos",
     imageContainerClassName: "justify-end",
     imageClassName: "max-h-[150px] dark:invert",
