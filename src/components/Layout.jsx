@@ -1,7 +1,7 @@
 // src/components/Layout.jsx
 
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom"; // <-- 1. Import Outlet
+import { Outlet } from "react-router-dom"; 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 

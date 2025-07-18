@@ -1,12 +1,13 @@
-import React from "react";
+import Hero from "../components/Hero";
+import GetToKnowMe from '../components/GetToKnowMe';
+import SelectedWork from "../components/SelectedWork";
 
 const Home = () => {
   return (
-    <div>
-      <h1 className="text-4xl font-bold">Home Page</h1>
-      <p className="mt-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, maxime!
-      </p>
+    <div className="bg-white dark:bg-black text-gray-800 dark:text-white">
+      <Hero />
+      <SelectedWork />
+      <GetToKnowMe />
     </div>
   );
 };
