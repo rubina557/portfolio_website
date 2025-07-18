@@ -42,7 +42,7 @@ const projectData = [
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white py-16">
+    <div className="min-h-screen   text-gray-900 dark:text-white py-16">
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16">
         <h2 className="font-bold text-[42px] md:text-[48px] leading-[100%] tracking-[0] mb-12 text-center md:text-left">
           {"Projects"}
@@ -100,7 +100,7 @@ export default function PortfolioPage() {
             </p>
             <Link
               to="#"
-              className="inline-flex items-center gap-2 text-[#111827] dark:text-white font-medium hover:underline transition-colors lg:mt-40"
+              className="inline-flex items-center gap-2 text-[#111827] dark:text-white font-medium hover:underline transition-colors lg:mt-4"
             >
               Visit Site <ArrowRight className="h-4 w-4" />
             </Link>

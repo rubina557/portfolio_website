@@ -4,7 +4,7 @@ import SelectedWork from "../components/SelectedWork";
 
 const Home = () => {
   return (
-    <div className="bg-white dark:bg-black text-gray-800 dark:text-white">
+    <div className=" text-gray-800 dark:text-white">
       <Hero />
       <SelectedWork />
       <GetToKnowMe />

@@ -51,7 +51,7 @@ const projectData = [
 
 const SelectedWork = () => {
   return (
-    <div className="bg-white dark:bg-black text-gray-900 dark:text-white py-12 px-4 md:px-8 lg:px-16">
+    <div className=" text-gray-900 dark:text-white py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-bold text-[32px] md:text-[48px] leading-[100%] tracking-[0] mb-12 text-left">
           Selected Work
